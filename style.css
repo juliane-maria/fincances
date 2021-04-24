@@ -6,11 +6,25 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 93.75%;
+}
 
 body {
   background: #f0f2f5;
   font-family: 'Poppins', sans-serif;
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border-width: 0;
+}
+
 .container {
   margin: auto;
   width: min(90vw, 800px);
@@ -21,6 +35,19 @@ h2 {
   margin-bottom: 0.8rem;
   color: var(--dark-blue);
   font-weight: normal;
+}
+
+a {
+  color: #49aa26;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3dd705;
+}
+.buttton.new {
+  display: inline-block;
+  margin-bottom: 0.8rem;
 }
 
 header {
@@ -52,7 +79,9 @@ header {
 .card h3 {
   font-weight: normal;
   font-size: 1rem;
-  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card p {
@@ -67,10 +96,17 @@ header {
   width: 100%;
   border-spacing: 0 0.5rem;
   color: #969cb3;
+
+  overflow-x: auto;
 }
 table thead tr th:first-child,
 table tbody tr td:first-child {
-  border-radius: 0.25 0 0 0.25rem;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
 table th {
@@ -107,4 +143,15 @@ footer {
   color: var(--dark-blue);
 
   opacity: 0.6;
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+  #balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }
